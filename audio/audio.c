@@ -649,7 +649,7 @@ int aaudio_module_init(void)
     int result;
     if ((result = alloc_chrdev_region(&aaudio_chrdev, 0, 1, "aaudio")))
         goto fail_chrdev;
-    aaudio_class = class_create(THIS_MODULE, "aaudio");
+    aaudio_class = class_create("aaudio");
     if (IS_ERR(aaudio_class)) {
         result = PTR_ERR(aaudio_class);
         goto fail_class;
